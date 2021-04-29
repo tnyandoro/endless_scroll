@@ -3,6 +3,7 @@ const val = {page:1};
 // object to hold the contents
 const page = {};
 page.container = document.createElement('div');
+page.container.textContent = 'Hello World!'
 // this is were the main contects are dumped 
 page.main = document.querySelector('section');
 page.main.append(page.container);
