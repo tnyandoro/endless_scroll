@@ -20,7 +20,7 @@ function getCourses(){
   fetch(baseURL).then((rep)=> rep.json())
   .then((json) => {
     console.log(json.data);
-    // renderPost(json.data.posts)
+    renderPost(json.data.posts)
   })
 }
 
