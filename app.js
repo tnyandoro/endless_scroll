@@ -9,8 +9,10 @@ page.main = document.querySelector('section');
 page.main.append(page.container);
 getCourses();
 
-function renderPost(params) {
-  
+function renderPost(data) {
+  data.forEach(function(post) {
+    const div = document.createElement('div');
+  })
 }
 
 function getCourses(){
