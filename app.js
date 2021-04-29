@@ -8,7 +8,11 @@ page.container.textContent = 'Hello World!'
 page.main = document.querySelector('section');
 page.main.append(page.container);
 getCourses();
- 
+
+function renderPost(params) {
+  
+}
+
 function getCourses(){
   const baseURL = url + '?p=' + val.page;
   fetch(baseURL).then((rep)=> rep.json())
