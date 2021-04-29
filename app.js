@@ -12,6 +12,7 @@ getCourses();
 function renderPost(data) {
   data.forEach(function(post) {
     const div = document.createElement('div');
+    div.innerHTML = '';
   })
 }
 
