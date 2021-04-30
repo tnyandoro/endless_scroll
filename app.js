@@ -8,7 +8,11 @@ page.container.textContent = 'Hello World!'
 // this is were the main contects are dumped 
 page.main = document.querySelector('section');
 page.main.append(page.container);
-getCourses();
+
+function firstLoad (){
+  page.container.innerHTML = '';
+  getCourses();
+}
 
 // listening to the windows scroll event
 window.onscroll = function(e) {
@@ -25,7 +29,9 @@ window.onscroll = function(e) {
     addNewPosts();
   }
 }
-function addNewPosts(){}
+function addNewPosts(){
+  val.page+=1;
+}
 
 function renderPost(data) {
   data.forEach(function(post) {
