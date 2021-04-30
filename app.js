@@ -9,6 +9,7 @@ page.container.textContent = 'Hello World!'
 page.main = document.querySelector('section');
 page.main.append(page.container);
 
+firstLoad();
 function firstLoad (){
   page.container.innerHTML = '';
   getCourses();
