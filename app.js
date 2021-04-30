@@ -15,6 +15,18 @@ function firstLoad (){
   getCourses();
 }
 
+function getCourses(){
+  const baseURL = url + '?p=' + val.page;
+  fetch(baseURL).then((rep)=> rep.json())
+  .then((json) => {
+    if(json.data.pages.next !== null){
+      page.loadMore = true;
+    }
+    console.log(json.data);
+    renderPost(json.data.posts)
+  })
+}
+
 // listening to the windows scroll event
 window.onscroll = function(e) {
   // console.log(e);
@@ -42,12 +54,5 @@ function renderPost(data) {
   })
 }
 
-function getCourses(){
-  const baseURL = url + '?p=' + val.page;
-  fetch(baseURL).then((rep)=> rep.json())
-  .then((json) => {
-    console.log(json.data);
-    renderPost(json.data.posts)
-  })
-}
+
 
