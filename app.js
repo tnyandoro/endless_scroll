@@ -9,6 +9,17 @@ page.main = document.querySelector('section');
 page.main.append(page.container);
 getCourses();
 
+// listening to the windows scroll event
+window.onscroll = function(e) {
+  console.log(e);
+  console.log(window.innerHeight);
+  console.log(window.scrollY);
+  console.log(page.main.offsetHeight);
+  console.log(document.body.offsetHeight);
+  if((window.innerHeight+window.scrollY)>=(document.body.offsetHeight-300))
+  console.log('SCROLLING');
+}
+
 function renderPost(data) {
   data.forEach(function(post) {
     const div = document.createElement('div');
