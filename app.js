@@ -22,8 +22,10 @@ window.onscroll = function(e) {
   // check to see if they are more pages to load 
   if(page.loaderMore){
     page.loaderMore = false;
+    addNewPosts();
   }
 }
+function addNewPosts(){}
 
 function renderPost(data) {
   data.forEach(function(post) {
