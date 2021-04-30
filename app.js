@@ -12,13 +12,17 @@ getCourses();
 
 // listening to the windows scroll event
 window.onscroll = function(e) {
-  console.log(e);
-  console.log(window.innerHeight);
-  console.log(window.scrollY);
-  console.log(page.main.offsetHeight);
-  console.log(document.body.offsetHeight);
+  // console.log(e);
+  // console.log(window.innerHeight);
+  // console.log(window.scrollY);
+  // console.log(page.main.offsetHeight);
+  // console.log(document.body.offsetHeight);
   if((window.innerHeight+window.scrollY)>=(document.body.offsetHeight-300))
   console.log('SCROLLING');
+  // check to see if they are more pages to load 
+  if(page.loaderMore){
+    page.loaderMore = false;
+  }
 }
 
 function renderPost(data) {
