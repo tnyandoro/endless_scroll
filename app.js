@@ -2,6 +2,7 @@ const url = 'https://script.google.com/macros/s/AKfycbxFlQXkvna9jYamLWhTQ1k3cJIt
 const val = {page:1};
 // object to hold the contents
 const page = {};
+page.loaderMore = true;
 page.container = document.createElement('div');
 page.container.textContent = 'Hello World!'
 // this is were the main contects are dumped 
