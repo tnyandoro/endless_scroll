@@ -61,6 +61,7 @@ function renderPost(data) {
     const div = document.createElement("div");
     div.innerHTML = `<h3>${post[8]}</h3>
     <div>${post[5]} stars by ${post[6]} students</div>
+    <a href="${post[0]}" target="_blank">${post[2]}</a>
     <hr>
     `;
     page.container.append(div);
