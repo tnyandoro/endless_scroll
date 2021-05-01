@@ -61,6 +61,7 @@ function renderPost(data) {
     const div = document.createElement("div");
     div.innerHTML = `<h3>${post[8]}</h3>
     <div>${post[5]} stars by ${post[6]} students</div>
+    <hr>
     `;
     page.container.append(div);
   });
