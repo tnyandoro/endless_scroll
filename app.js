@@ -5,12 +5,13 @@ const val = { page: 1 };
 const page = {};
 page.loaderMore = true;
 page.message = document.createElement('div');
-message.textContent = 'Scroll to add more content';
+page.message.textContent = '----Scroll to add more content----';
 page.container = document.createElement("div");
 page.container.textContent = "Hello World!";
 // this is were the main contects are dumped
 page.main = document.querySelector("section");
 page.main.append(page.container);
+page.main.append(page.message);
 
 firstLoad();
 function firstLoad() {
@@ -19,11 +20,15 @@ function firstLoad() {
 }
 function getCourses() {
   const baseURL = url + "?p=" + val.page;
+  page.message.textContent = 'loading....'
   fetch(baseURL)
     .then((rep) => rep.json())
     .then((json) => {
       if (json.data.pages.next != null) {
         page.loaderMore = true;
+        page.message.textContent = '-Page '+val.page+' -loading...'
+      }else{
+        page.message.style.display = 'none';
       }
       console.log(page);
       console.log(json.data);
@@ -47,14 +52,16 @@ window.onscroll = function (ev) {
 };
 
 function addNewPosts() {
-  val.page++;
+  val.page+=1;
   getCourses();
 }
 
 function renderPost(data) {
   data.forEach(function (post) {
     const div = document.createElement("div");
-    div.innerHTML = `${post[8]}`;
+    div.innerHTML = `<h3>${post[8]}</h3>
+    <div>${post[5]} stars by ${post[6]} students</div>
+    `;
     page.container.append(div);
   });
 }
